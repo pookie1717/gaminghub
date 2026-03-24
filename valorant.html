@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Valorant | PookieHub</title>
+<style>
+/* Base theme - same as your main site */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color:#0f0f0f; color:#f5f5f5; line-height:1.6; }
+
+/* Navbar */
+nav {
+  background: #1a1a1a;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav h2 { color:#7433ff; }
+nav a { color:#aaa; text-decoration:none; margin-left:15px; font-weight:bold; }
+nav a:hover { color:#fff; }
+
+/* Hero Section */
+header.hero {
+  background: linear-gradient(135deg,#ff00cc,#7433ff);
+  padding:50px 20px;
+  text-align:center;
+}
+header.hero h1 { font-size:3rem; margin-bottom:10px; }
+header.hero p { color:#f0f0f0; font-size:1.2rem; }
+
+/* Container */
+.container { max-width:900px; margin:auto; padding:40px 20px; }
+
+/* Stats Card */
+.stats-card {
+  background:#1a1a1a;
+  border-radius:12px;
+  padding:25px;
+  margin-bottom:30px;
+  text-align:center;
+  box-shadow:0 0 20px #7433ff;
+}
+.stats-card h3 { font-size:1.5rem; margin-bottom:10px; }
+.stats-grid { display:flex; justify-content:space-around; margin-top:20px; flex-wrap:wrap; }
+.stat-box {
+  background:#111;
+  flex:1;
+  margin:10px;
+  padding:15px 20px;
+  border-radius:10px;
+}
+.stat-box h2 { font-size:1.5rem; margin-bottom:5px; }
+
+/* Video Section */
+.video-section { text-align:center; margin-top:30px; }
+.video-section iframe {
+  width:100%;
+  max-width:800px;
+  height:450px;
+  border:none;
+  border-radius:12px;
+}
+
+/* Footer */
+footer { background:#111; color:#888; text-align:center; padding:20px; margin-top:40px; }
+
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <h2>PookieHub 🎮</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="valorant.html">Valorant</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <h1>Valorant Stats</h1>
+  <p>Live stats for <strong>NotAarav69#DADDY</strong></p>
+</header>
+
+<div class="container">
+  <!-- Stats Card -->
+  <div class="stats-card">
+    <h3>Current Rank</h3>
+    <h2 id="rank">Loading...</h2>
+    <p id="rr"></p>
+
+    <div class="stats-grid">
+      <div class="stat-box">
+        <h2 id="games">0</h2>
+        <p>Games Played</p>
+      </div>
+      <div class="stat-box">
+        <h2 id="wins">0</h2>
+        <p>Wins</p>
+      </div>
+      <div class="stat-box">
+        <h2 id="kd">0.00</h2>
+        <p>K/D Ratio</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- YouTube Video -->
+  <div class="video-section">
+    <h3>My Valorant Gameplay</h3>
+    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Aarav | PookieHub
+</footer>
+
+<script>
+// Fetch Valorant stats
+async function getValoStats() {
+  const url = "https://api.henrikdev.xyz/valorant/v1/mmr/ap/NotAarav69/DADDY";
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    document.getElementById("rank").innerText = data.data.currenttierpatched;
+    document.getElementById("rr").innerText = data.data.ranking_in_tier + " RR";
+
+    // Example stats (replace with real API data if available)
+    document.getElementById("games").innerText = 50;
+    document.getElementById("wins").innerText = 30;
+    document.getElementById("kd").innerText = 1.25;
+
+  } catch(err) {
+    console.log("Error fetching stats:", err);
+    document.getElementById("rank").innerText = "Error";
+    document.getElementById("rr").innerText = "";
+  }
+}
+
+getValoStats();
+</script>
+
+</body>
+</html>

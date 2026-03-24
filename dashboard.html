@@ -157,6 +157,8 @@ footer {
       <h3>🎯 Valorant Stats</h3>
       <p>Track your rank & performance</p>
       <button onclick="showStats()">Open</button>
+      <h2 id="rank">Loading rank...</h2>
+<p id="rr">Loading RR...</p>
     </div>
 
     <div class="card">
@@ -238,5 +240,31 @@ function logout() {
 </script>
 
 </body>
+  <script>
+    async function getValoStats() {
+  const username = "NotAarav69";
+  const tag = "DADDY";
+
+  const url = `https://api.henrikdev.xyz/valorant/v1/mmr/ap/${username}/${tag}`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    console.log(data);
+
+    document.getElementById("rank").innerText =
+      data.data.currenttierpatched;
+
+    document.getElementById("rr").innerText =
+      data.data.ranking_in_tier + " RR";
+
+  } catch (err) {
+    console.log("Error:", err);
+  }
+}
+
+getValoStats();
+  </script>
 </html>
 ```

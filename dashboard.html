@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🎮 Welcome to Gaming Hub</h1>
+
+<div class="card">
+  <h3>Valorant Stats</h3>
+  <p>Coming soon 🔥</p>
+</div>
+
+<div class="card">
+  <h3>Minecraft Server</h3>
+  <button onclick="copyIP()">Copy IP</button>
+</div>
+
+<script>
+function copyIP() {
+  navigator.clipboard.writeText("192.168.1.5");
+  alert("Server IP copied!");
+}
+</script>
+
+</body>
+</html>

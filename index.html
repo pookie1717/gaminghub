@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aarav | Gaming Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: #fff;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #1a1a1a;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h2 {
+      color: #7433ff;
+    }
+
+    nav a {
+      color: #aaa;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    /* HERO */
+    .hero {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff00cc, #7433ff);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .hero button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      border: none;
+      background: black;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* SECTION */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #7433ff;
+      text-align: center;
+    }
+
+    /* CARDS */
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #7433ff;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      background: #7433ff;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>PookieHub 🎮</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Stats</a>
+    <a href="#">Clips</a>
+    <a href="login.html">Login</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Aarav's Gaming Hub</h1>
+  <p>Valorant • Minecraft • Content • Tech</p>
+  <button onclick="location.href='dashboard.html'">Enter Hub</button>
+</div>
+
+<!-- FEATURES -->
+<section>
+  <h2>🔥 Features</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🎯 Valorant Stats</h3>
+      <p>Track rank, KD and performance</p>
+      <button>View</button>
+    </div>
+
+    <div class="card">
+      <h3>⛏ Minecraft Server</h3>
+      <p>Join my private server</p>
+      <button onclick="copyIP()">Copy IP</button>
+    </div>
+
+    <div class="card">
+      <h3>🎥 Gaming Clips</h3>
+      <p>Watch my best moments</p>
+      <button>Watch</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <h2>👑 About Me</h2>
+  <p style="text-align:center;">
+    15 y/o gamer, badminton player and future entrepreneur.  
+    I love building tech, playing Valorant and creating cool stuff.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Aarav | Built with 💜
+</footer>
+
+<script>
+function copyIP() {
+  navigator.clipboard.writeText("192.168.1.5");
+  alert("Server IP copied!");
+}
+</script>
+
+</body>
+</html>
+```
